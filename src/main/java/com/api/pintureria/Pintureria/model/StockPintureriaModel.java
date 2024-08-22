@@ -32,6 +32,38 @@ public class StockPintureriaModel {
     @Column(nullable = false)
     private int cantidad;
 
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public ProductoModel getProducto() {
+		return producto;
+	}
+
+	public void setProducto(ProductoModel producto) {
+		this.producto = producto;
+	}
+
+	public PintureriaModel getPintureria() {
+		return pintureria;
+	}
+
+	public void setPintureria(PintureriaModel pintureria) {
+		this.pintureria = pintureria;
+	}
+
+	public int getCantidad() {
+		return cantidad;
+	}
+
+	public void setCantidad(int cantidad) {
+		this.cantidad = cantidad;
+	}
+
     
 
 }
