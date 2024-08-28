@@ -7,7 +7,8 @@
 <h4>Tecnologias Usadas:</h4>
 
 <ul>
-  <li>Spring Boot 3</li>
+   <li>Spring Boot 3</li>
+   <li>Java 17</li>
    <li>Spring Security 6</li>
    <li>jsonwebtoken</li>
 </ul>
