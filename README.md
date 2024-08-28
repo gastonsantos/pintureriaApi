@@ -1,10 +1,11 @@
-<h2>Pintureria.<h2>
+<h1>Pintureria<h1>
 
-Proyecto realizado en Spring Boot con JWT Authentication.
+<h3>Proyecto realizado en Spring Boot con JWT Authentication.<h3>
 
-Spring Boot: JWT Authentication.
+<h4>Spring Boot: JWT Authentication.</h4>
 
-Tecnologias Usadas:
+<h4>Tecnologias Usadas:</h4>
+
 <ul>
   <li>Spring Boot 3</li>
    <li>Spring Security 6</li>
