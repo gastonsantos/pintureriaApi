@@ -1,4 +1,4 @@
-Pintureria .
+<h2>Pintureria.<h2>
 
 Proyecto realizado en Spring Boot con JWT Authentication.
 
