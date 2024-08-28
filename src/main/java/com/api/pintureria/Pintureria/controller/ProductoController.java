@@ -10,8 +10,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.api.pintureria.Pintureria.model.ProductoModel;
 import com.api.pintureria.Pintureria.service.IProductoService;
 
+import lombok.RequiredArgsConstructor;
+
 @RestController
 @RequestMapping("/api")
+@RequiredArgsConstructor
 public class ProductoController {
 	
 	@Autowired
@@ -23,12 +26,12 @@ public class ProductoController {
 		this._productoServices = _productoServices;
 	}
 
-	@GetMapping("/hello")
+	@GetMapping(value="hello")
 	public String hello() {
 	  return "La concha puta de tu madre";
 	}
 	
-	@GetMapping("/todosLosProductos")
+	@GetMapping(value="todosLosProductos")
 	public List<ProductoModel> allProductos(){
 		return _productoServices.findAllProductosModel();
 	}
