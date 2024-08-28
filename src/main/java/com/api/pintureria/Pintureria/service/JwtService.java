@@ -6,6 +6,7 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.Date;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
@@ -21,8 +22,9 @@ import lombok.RequiredArgsConstructor;
 @Service
 @RequiredArgsConstructor
 public class JwtService  implements IJwtService{
-
-    private static final String SECRET_KEY="586E3272357538782F413F4428472B4B6250655368566B597033733676397924";
+	@Value("${jwt.secret.key}")
+	private String SECRET_KEY;
+   
 
     public String getToken(UserDetails user) {
         return getToken(new HashMap<>(), user);
