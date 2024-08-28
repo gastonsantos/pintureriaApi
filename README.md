@@ -2,7 +2,7 @@ Pintureria .
 
 Proyecto realizado en Spring Boot con JWT Authentication.
 
-Spring Boot: JWT Authentication Project
+Spring Boot: JWT Authentication.
 
 Tecnologias Usadas:
 
