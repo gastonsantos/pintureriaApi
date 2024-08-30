@@ -28,7 +28,7 @@ public class JwtAuthenticationFiltrer extends OncePerRequestFilter {
     @Autowired
     private UserDetailsService userDetailsService;
 
-    
+
     /*
      doFilterInternal: Este metodo se ejecuta en cada solicitur HTTP. Es el responsable de extraer el token de la Cabecera, 
      validarlo y autenticar al usuario si es todo correcto.

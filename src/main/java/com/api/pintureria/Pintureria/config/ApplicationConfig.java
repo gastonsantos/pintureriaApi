@@ -12,6 +12,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import com.api.pintureria.Pintureria.repository.PintureriaRepository;
 import com.api.pintureria.Pintureria.repository.UsuarioRepository;
 
 import lombok.RequiredArgsConstructor;
@@ -21,10 +22,10 @@ import lombok.RequiredArgsConstructor;
 public class ApplicationConfig {
 
     private final UsuarioRepository userRepository;
-
+    private final PintureriaRepository _pintureriaRepository;
     @Autowired
-    public ApplicationConfig(UsuarioRepository userRepository) {
-		
+    public ApplicationConfig(UsuarioRepository userRepository, PintureriaRepository pintureriaRepository) {
+		this._pintureriaRepository = pintureriaRepository;
 		this.userRepository = userRepository;
 	}
     
@@ -69,7 +70,7 @@ public class ApplicationConfig {
      */
     @Bean
     public UserDetailsService userDetailService() {
-        return username -> userRepository.findByUsername(username)
+        return username -> _pintureriaRepository.findByUsername(username)
         .orElseThrow(()-> new UsernameNotFoundException("User not fournd"));
     }
 

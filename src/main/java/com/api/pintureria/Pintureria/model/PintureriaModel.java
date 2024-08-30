@@ -1,7 +1,11 @@
 package com.api.pintureria.Pintureria.model;
 
 
+import java.util.Collection;
 import java.util.Set;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -12,10 +16,11 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
 
 @Entity
-@Table(name = "Pintureria")
-public class PintureriaModel {
+@Table(name="pintureria", uniqueConstraints = {@UniqueConstraint(columnNames = {"username"})})
+public class PintureriaModel implements UserDetails {
 
 	    @Id
 	    @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,14 +36,33 @@ public class PintureriaModel {
 	    private String telefono;
 	    
 	    @Column 
-	    private String email; 
+	    private String username; 
 	    
 	    @Column 
-	    private String contrasenia;
+	    private String password;
 	    
 	    @OneToMany(mappedBy = "pintureria", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	    private Set<StockPintureriaModel> stockPinturerias;
 
+	    
+	    
+	    
+		public PintureriaModel(Long id, String nombre, String direccion, String telefono, String username,
+				String password, Set<StockPintureriaModel> stockPinturerias) {
+			
+			this.id = id;
+			this.nombre = nombre;
+			this.direccion = direccion;
+			this.telefono = telefono;
+			this.username = username;
+			this.password = password;
+			this.stockPinturerias = stockPinturerias;
+		}
+	    
+		public PintureriaModel() {
+			
+		
+		}
 		public Long getId() {
 			return id;
 		}
@@ -71,20 +95,15 @@ public class PintureriaModel {
 			this.telefono = telefono;
 		}
 
-		public String getEmail() {
-			return email;
+		
+
+		public void setUsername(String username) {
+			this.username = username;
 		}
 
-		public void setEmail(String email) {
-			this.email = email;
-		}
-
-		public String getContrasenia() {
-			return contrasenia;
-		}
-
-		public void setContrasenia(String contrasenia) {
-			this.contrasenia = contrasenia;
+	
+		public void setPassword(String password) {
+			this.password = password;
 		}
 
 		public Set<StockPintureriaModel> getStockPinturerias() {
@@ -94,5 +113,40 @@ public class PintureriaModel {
 		public void setStockPinturerias(Set<StockPintureriaModel> stockPinturerias) {
 			this.stockPinturerias = stockPinturerias;
 		}
+
+		 @Override
+		    public Collection<? extends GrantedAuthority> getAuthorities() {
+		        return null;
+		    }
+
+		    @Override
+		    public boolean isAccountNonExpired() {
+		        return true;
+		    }
+
+		    @Override
+		    public boolean isAccountNonLocked() {
+		        return true;
+		    }
+
+		    @Override
+		    public boolean isCredentialsNonExpired() {
+		        return true;
+		    }
+
+		    @Override
+		    public boolean isEnabled() {
+		        return true;
+		    }
+
+		    @Override
+		    public String getPassword() {
+		        return this.password;
+		    }
+
+		    @Override
+		    public String getUsername() {
+		        return this.username;
+		    }
 	    
 }
