@@ -59,16 +59,17 @@ public class AuthService implements IAuthService {
         	   throw new UsuarioNoPuedeSerVacioException();
            }
     	UserDetails user = _pintureriaRepository.findByUsernameAndPassword(request.getUsername(), request.getPassword());
-    		if(user == null) {
+    	PintureriaModel pintureria = _pintureriaRepository.findByUsernameAndPassword(request.getUsername(), request.getPassword());
+    		if(user == null || pintureria == null ) {
     			 throw new UsuarioNoEncontradoException();
     		}
         System.out.println("En el login:  " + user.getUsername()+" ,"+user.getPassword());
-        String token = _jwtService.getToken(user);
+        String token = _jwtService.getToken(pintureria);
         AuthResponse authResponse = new AuthResponse();  
         authResponse.setToken(token);
         return authResponse;
     }
-
+/*
     @Override
     public AuthResponse register(RegisterRequest request) {
         PintureriaModel pintureria = new PintureriaModel();
@@ -84,6 +85,6 @@ public class AuthService implements IAuthService {
         return authResponse;
     }
 
-	
+	*/
 	
 }

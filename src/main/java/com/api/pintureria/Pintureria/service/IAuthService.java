@@ -7,6 +7,6 @@ import com.api.pintureria.Pintureria.controllerAuth.RegisterRequest;
 public interface IAuthService {
 
 	public AuthResponse login(LoginRequest request);
-    public AuthResponse register(RegisterRequest request);
+ //   public AuthResponse register(RegisterRequest request);
  
 }

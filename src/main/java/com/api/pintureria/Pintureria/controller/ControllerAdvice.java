@@ -9,20 +9,8 @@ import com.api.pintureria.Pintureria.model.ErrorDto;
 
 @RestControllerAdvice
 public class ControllerAdvice {
-/*
-	@ExceptionHandler(value= RuntimeException.class)
-	public ResponseEntity<ErrorDto> runtimeExceptionHandler(RuntimeException ex){
-		ErrorDto error = new ErrorDto("P-500", ex.getMessage());
-			return new ResponseEntity(error, HttpStatus.CONFLICT);
-	}
-	*/
-	/*
-	@ExceptionHandler(value= ExceptionGeneric.class)
-	public ResponseEntity<ErrorDto> ExceptionGeneric(ExceptionGeneric ex){
-		ErrorDto error = new ErrorDto(ex.getCode(), ex.getMessage());
-			return new ResponseEntity(error, ex.getStatus());
-	}
-	*/
+
+	// Lo que hace el RescControllerAdvance es que cuando se genera un excepcion es lo que se devuelve.
 	@ExceptionHandler(value = ExceptionGeneric.class)
 	public ResponseEntity<ErrorDto> handleExceptionGeneric(ExceptionGeneric ex) {
 	    ErrorDto error = new ErrorDto(ex.getCode(), ex.getMessage());

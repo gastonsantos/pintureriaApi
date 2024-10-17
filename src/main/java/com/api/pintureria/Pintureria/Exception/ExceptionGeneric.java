@@ -1,7 +1,7 @@
 package com.api.pintureria.Pintureria.Exception;
 
 import org.springframework.http.HttpStatus;
-
+//RuntimeException son excepciones que pasan en tiempo de ejecucion.
 public class ExceptionGeneric extends RuntimeException{
 
 	private String code;

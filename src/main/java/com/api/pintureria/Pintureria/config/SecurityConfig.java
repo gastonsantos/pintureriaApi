@@ -43,7 +43,7 @@ public class SecurityConfig {
 	                .disable()) // se Deshabilita la proteccion CSRF, que viene por defecto porque vamos a usar JWT, creado por nosotros.
 	            .authorizeHttpRequests(authRequest ->
 	              authRequest
-	                .requestMatchers("/auth/**").permitAll() // Todo lo que matchee con "/auth" va a ser publico.
+	                .requestMatchers("/auth/**").permitAll()
 	                .anyRequest().authenticated() // Toda el resto de Request se va a pedir que esten autenticadas.
 	                )
 	            .sessionManagement(sessionManager->

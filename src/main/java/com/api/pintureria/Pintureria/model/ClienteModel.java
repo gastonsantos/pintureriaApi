@@ -55,6 +55,17 @@ public class ClienteModel {
 		this.email = email;
 	}
 
+	public Integer getDni() {
+		return dni;
+	}
+
+	public void setDni(Integer dni) {
+		this.dni = dni;
+	}
+
+	@Column 
+	private Integer dni;
+	
 	@Column
     private String nombre;
 
@@ -65,7 +76,23 @@ public class ClienteModel {
     private String telefono;
     
     @Column 
-    private String email; 
+    private String email;
+
+    
+	public ClienteModel() {
+		
+	}
+
+	public ClienteModel(Long id, Integer dni, String nombre, String direccion, String telefono, String email) {
+		
+		this.id = id;
+		this.dni = dni;
+		this.nombre = nombre;
+		this.direccion = direccion;
+		this.telefono = telefono;
+		this.email = email;
+	} 
    
+    
     
 }

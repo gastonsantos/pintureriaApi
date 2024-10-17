@@ -32,13 +32,13 @@ public class Auth {
 	    {
 	        return ResponseEntity.ok(_authService.login(request));
 	    }
-
+/*
 	    @PostMapping(value = "register")
 	    public ResponseEntity<AuthResponse> register(@RequestBody RegisterRequest request)
 	    {
 	        return ResponseEntity.ok(_authService.register(request));
 	    }
-	    
+	    */
 	    @GetMapping(value="hello")
 		public String hello() {
 		  return "La concha puta de tu madre";

@@ -20,14 +20,14 @@ public class ProductoModel {
 	
 	public ProductoModel() {
 	}
-	public ProductoModel(Long id, String nombre, String descripcion, Double precio, Integer stock, Date fecha_ingreso,
+	public ProductoModel(String nombre, String descripcion, Double precio, Date fecha_ingreso, String categoria,
 	Set<StockPintureriaModel> stockPinturerias) {
 		super();
-		this.id = id;
+		
 		this.nombre = nombre;
 		this.descripcion = descripcion;
+		this.categoria = categoria;
 		this.precio = precio;
-		this.stock = stock;
 		this.fecha_ingreso = fecha_ingreso;
 		this.stockPinturerias = stockPinturerias;
 	}
@@ -42,13 +42,13 @@ public class ProductoModel {
     @Column
     private String descripcion;
      
-   
+    @Column
+    private String categoria;
 
 	@Column 
     private Double precio;
     
-    @Column 
-    private Integer stock; 
+
     
     @Column 
     private Date fecha_ingreso;
@@ -90,13 +90,15 @@ public class ProductoModel {
 		this.precio = precio;
 	}
 
-	public Integer getStock() {
-		return stock;
+	
+ 
+	public String getCategoria() {
+		return categoria;
+	}
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
 	}
 
-	public void setStock(Integer stock) {
-		this.stock = stock;
-	}
 
 	public Date getFecha_ingreso() {
 		return fecha_ingreso;

@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
+import com.api.pintureria.Pintureria.model.PintureriaModel;
 import com.api.pintureria.Pintureria.model.UsuarioModel;
 
 import io.jsonwebtoken.Claims;
@@ -26,13 +27,17 @@ public class JwtService  implements IJwtService{
 	private String SECRET_KEY;
    
 
-    public String getToken(UserDetails user) {
-        return getToken(new HashMap<>(), user);
+    public String getToken( PintureriaModel pintureria) {
+        return getToken(new HashMap<>(), pintureria);
     }
 
-    private String getToken(Map<String,Object> extraClaims, UserDetails user) {
+    private String getToken(Map<String,Object> extraClaims, PintureriaModel pintureria) {
     	return Jwts.builder()
-                .setSubject(user.getUsername())  // Aquí se establece el nombre de usuario
+                .setSubject(pintureria.getUsername()) 
+                .claim("id", pintureria.getId())
+                .claim("nombre", pintureria.getNombre())
+                .claim("direccion", pintureria.getDireccion())
+                .claim("telefono", pintureria.getTelefono())/// Aquí se establece el nombre de usuario
                 .setIssuedAt(new Date(System.currentTimeMillis()))  // Fecha de creación del token
                 .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 10))  // Expiración a 10 horas
                 .signWith(SignatureAlgorithm.HS256, SECRET_KEY)  // Clave secreta para firmar el token

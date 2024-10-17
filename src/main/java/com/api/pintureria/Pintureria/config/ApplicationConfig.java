@@ -13,6 +13,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import com.api.pintureria.Pintureria.repository.PintureriaRepository;
+import com.api.pintureria.Pintureria.repository.ProductoRepository;
 import com.api.pintureria.Pintureria.repository.UsuarioRepository;
 
 import lombok.RequiredArgsConstructor;
@@ -23,10 +24,12 @@ public class ApplicationConfig {
 
     private final UsuarioRepository userRepository;
     private final PintureriaRepository _pintureriaRepository;
+    private final ProductoRepository _productoRepository;
     @Autowired
-    public ApplicationConfig(UsuarioRepository userRepository, PintureriaRepository pintureriaRepository) {
+    public ApplicationConfig(UsuarioRepository userRepository, PintureriaRepository pintureriaRepository, ProductoRepository productoRepository) {
 		this._pintureriaRepository = pintureriaRepository;
 		this.userRepository = userRepository;
+		this._productoRepository = productoRepository;
 	}
     
     /*
