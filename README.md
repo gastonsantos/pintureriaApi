@@ -11,5 +11,7 @@
    <li>Java 17</li>
    <li>Spring Security 6</li>
    <li>jsonwebtoken</li>
+   <li>Excepciones Personaliadas</li>
+   <li>HTTP status code errores personalizados</li>
 </ul>
 
