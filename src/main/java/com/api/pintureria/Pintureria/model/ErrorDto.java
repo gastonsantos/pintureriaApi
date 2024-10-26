@@ -3,8 +3,8 @@ package com.api.pintureria.Pintureria.model;
 import lombok.Builder;
 import lombok.Data;
 
-@Data
-@Builder
+//@Data
+//@Builder
 public class ErrorDto {
 
 	private String code;

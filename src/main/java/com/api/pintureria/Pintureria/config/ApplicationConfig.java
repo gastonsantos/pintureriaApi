@@ -19,7 +19,7 @@ import com.api.pintureria.Pintureria.repository.UsuarioRepository;
 import lombok.RequiredArgsConstructor;
 
 @Configuration
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 public class ApplicationConfig {
 
     private final UsuarioRepository userRepository;

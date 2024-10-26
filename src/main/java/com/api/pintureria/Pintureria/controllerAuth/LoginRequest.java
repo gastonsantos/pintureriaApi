@@ -7,8 +7,8 @@ import lombok.NoArgsConstructor;
 
 @Data //el Data es para que cree directamente los Getter y Setters
 @Builder  // 
-@AllArgsConstructor
-@NoArgsConstructor
+//@AllArgsConstructor
+//@NoArgsConstructor
 public class LoginRequest {
     String username;
     String password;

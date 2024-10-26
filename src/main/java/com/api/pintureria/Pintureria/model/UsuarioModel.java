@@ -25,10 +25,10 @@ import lombok.NoArgsConstructor;
  en el sistema de autenticación y autorización de Spring. Esta interfaz es clave cuando se implementa seguridad en una 
  aplicación, ya que permite a Spring Security manejar la autenticación de usuarios.
  */
-@Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
+//@Data
+//@Builder
+//@NoArgsConstructor
+//@AllArgsConstructor
 @Entity
 @Table(name="usuario", uniqueConstraints = {@UniqueConstraint(columnNames = {"username"})})
 public class UsuarioModel implements UserDetails {

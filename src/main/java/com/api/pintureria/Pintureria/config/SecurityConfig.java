@@ -20,7 +20,7 @@ import static org.springframework.security.config.Customizer.withDefaults;
 
 @Configuration
 @EnableWebSecurity
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 public class SecurityConfig {
 	  private final JwtAuthenticationFiltrer jwtAuthenticationFilter;
 	    private final AuthenticationProvider authProvider;

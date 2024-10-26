@@ -21,10 +21,11 @@ import io.jsonwebtoken.security.Keys;
 import lombok.RequiredArgsConstructor;
 
 @Service
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 public class JwtService  implements IJwtService{
-	@Value("${jwt.secret.key}")
-	private String SECRET_KEY;
+	//@Value("${jwt.secret.key}")
+	
+	private String SECRET_KEY = "586E3272357538782F413F4428472B4B6250655368566B597033733676397924";
    
 
     public String getToken( PintureriaModel pintureria) {

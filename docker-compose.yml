@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: spring_app
+    ports:
+      - "8000:8000"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://junction.proxy.rlwy.net:11311/railway?serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: kfVJfEXGaNTCnXnOXEUBZExsuAgSTklE
+
+	 
+	 # mysql://root:lVxZbYsAQXNmFDeqmunTlxvppoaKGvgt@junction.proxy.rlwy.net:13580/railway
