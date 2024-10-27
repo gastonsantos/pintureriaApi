@@ -72,5 +72,11 @@ public class ProductoController {
 	public void agregarProducto(@RequestBody ProductoDto producto) {
 		 _productoServices.agregarStockProductoPintureria(producto);
 	}
+	
+	@PostMapping(value="eliminarProducto")
+	public void eliminarProducto(@RequestBody IdRequest idRequest) {
+		 _productoServices.eliminarProductoPintureria(idRequest.getId());
+	}
+	
 
 }

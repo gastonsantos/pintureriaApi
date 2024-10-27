@@ -120,5 +120,16 @@ public class ProductoService implements IProductoService{
 			stockPintureriaRepository.save(stockPintureria);
 	   }
 	}
+
+	@Override
+	public void eliminarProductoPintureria(Long id) {
+	
+		ProductoModel producto = findProductoById(id);
+		if(producto != null) {
+			productoRepository.delete(producto);
+		}else {
+			throw new ProductoNoEncontradoException();
+		}
+	}
 	
 }

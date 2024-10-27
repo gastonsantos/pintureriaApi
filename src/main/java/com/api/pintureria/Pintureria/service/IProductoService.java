@@ -19,4 +19,6 @@ public interface IProductoService {
 
 	public Long agregarProducto(ProductoDto producto);
 	public void agregarStockProductoPintureria (ProductoDto producto);
+
+	public void eliminarProductoPintureria(Long id);
 }
