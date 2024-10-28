@@ -10,10 +10,10 @@
    <li>Estados HTTP personalizados</li>
 </ul>
    
-<h3> Frontend realizado en Next js <h3>
-<h3>
+<h4> Frontend realizado en Next js <h4>
+<h4>
    GIT: https://github.com/gastonsantos/pintureriaFront
-</h3>
+</h4>
 
 
 
